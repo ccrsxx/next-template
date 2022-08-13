@@ -43,5 +43,6 @@ jobs:
       - name: 📥 Download deps
         run: npm ci
 
-      - name: 🔬 Test
-        run: npm run test:ci
+      # ! uncomment this after you add test
+      # - name: 🔬 Test
+      # run: npm run test:ci
