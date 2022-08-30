@@ -1,4 +1,4 @@
-import { showLogger } from '@constant/env';
+import { showLogger } from '@lib/env';
 
 /**
  * A logger function that will only logs on development

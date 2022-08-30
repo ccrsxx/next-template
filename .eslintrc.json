@@ -46,11 +46,6 @@
             "pattern": "@components/**",
             "group": "external",
             "position": "after"
-          },
-          {
-            "pattern": "@styles/**",
-            "group": "external",
-            "position": "after"
           }
         ],
         "warnOnUnassignedImports": true,
