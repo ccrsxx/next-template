@@ -1,9 +1,12 @@
-import { MainLayout } from '@components/common/main-layout';
+import Error from 'next/error';
+import { SEO } from '@components/common/seo';
+import { Layout } from '@components/common/layout';
 
 export default function NotFound(): JSX.Element {
   return (
-    <MainLayout>
-      <h1>404 - Page Not Found</h1>
-    </MainLayout>
+    <Layout>
+      <SEO />
+      <Error statusCode={404} />
+    </Layout>
   );
 }

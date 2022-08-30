@@ -15,9 +15,9 @@ const customJestConfig = {
   testEnvironment: 'jest-environment-jsdom',
   // Math aliases too instead of just baseUrl
   moduleNameMapper: {
-    '^@assets(.*)$': '<rootDir>/assets$1',
     '^@components(.*)$': '<rootDir>/components$1',
-    '^@lib(.*)$': '<rootDir>/lib$1'
+    '^@lib(.*)$': '<rootDir>/lib$1',
+    '^@styles(.*)$': '<rootDir>/styles$1'
   }
 };
 

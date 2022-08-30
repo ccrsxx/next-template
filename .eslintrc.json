@@ -20,16 +20,40 @@
   },
   "rules": {
     "semi": ["warn", "always"],
-    "curly": ["error", "multi"],
+    "curly": ["warn", "multi"],
     "quotes": ["error", "single", { "avoidEscape": true }],
     "jsx-quotes": ["error", "prefer-single"],
     "linebreak-style": ["error", "unix"],
     "no-console": "warn",
-    "comma-dangle": "error",
+    "comma-dangle": ["error", "never"],
     "no-unused-expressions": "error",
     "import/order": [
       "error",
       {
+        "pathGroups": [
+          {
+            "pattern": "*.scss",
+            "group": "builtin",
+            "position": "before",
+            "patternOptions": { "matchBase": true }
+          },
+          {
+            "pattern": "@lib/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@components/**",
+            "group": "external",
+            "position": "after"
+          },
+          {
+            "pattern": "@styles/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "warnOnUnassignedImports": true,
         "groups": [
           "builtin",
           "external",
@@ -40,6 +64,14 @@
           "object",
           "type"
         ]
+      }
+    ],
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": {
+          "attributes": false
+        }
       }
     ],
     "@typescript-eslint/consistent-type-imports": "error",
