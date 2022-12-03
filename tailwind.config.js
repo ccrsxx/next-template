@@ -5,14 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {},
-      colors: {},
-      animation: {},
-      keyframes: {}
+      colors: {}
     }
   },
-  plugins: [
-    ({ addVariant }) => {
-      addVariant('inner', '& > *');
-    }
-  ]
+  plugins: []
 };
