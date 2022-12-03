@@ -1,30 +1,37 @@
-import cn from 'clsx';
-import { VscLoading } from 'react-icons/vsc';
+import { clsx } from 'clsx';
+import { Loading } from './loading';
+import type { ComponentProps } from 'react';
 
-type ButtonProps = {
-  isLoading?: boolean;
-} & React.ComponentPropsWithRef<'button'>;
+type ButtonProps = ComponentProps<'button'> & {
+  loading?: boolean;
+};
 
 export function Button({
   className,
-  isLoading,
+  loading,
   disabled,
   children,
   ...rest
 }: ButtonProps): JSX.Element {
-  const isDisabled = isLoading ?? disabled;
+  // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+  const isDisabled = loading || disabled;
 
   return (
     <button
-      className={cn(className)}
+      className={clsx(
+        'custom-button main-tab',
+        loading && 'relative !text-transparent disabled:cursor-wait',
+        className
+      )}
       type='button'
       disabled={isDisabled}
       {...rest}
     >
-      {isLoading && (
-        <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-          <VscLoading className='animate-spin' />
-        </div>
+      {loading && (
+        <Loading
+          iconClassName='h-5 w-5'
+          className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'
+        />
       )}
       {children}
     </button>

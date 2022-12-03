@@ -5,7 +5,7 @@ import { Layout } from '@components/common/layout';
 export default function NotFound(): JSX.Element {
   return (
     <Layout>
-      <SEO />
+      <SEO title='Page not found' />
       <Error statusCode={404} />
     </Layout>
   );

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
-import cn from 'clsx';
+import { clsx } from 'clsx';
 import type { ImageProps } from 'next/image';
 
 type NextImageProps = {
@@ -42,9 +42,9 @@ export default function NextImage({
       className={className}
     >
       <Image
-        className={cn(
+        className={clsx(
           imgClassName,
-          status === 'loading' && cn('animate-pulse', blurClassName)
+          status === 'loading' && clsx('animate-pulse', blurClassName)
         )}
         src={src}
         width={width}
